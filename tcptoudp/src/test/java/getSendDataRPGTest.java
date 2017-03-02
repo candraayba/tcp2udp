@@ -4,7 +4,7 @@ import java.io.DataOutputStream;
 import java.net.Socket;
 
 /**
- * Created by len on 5/30/16.
+ * @author candra
  */
 public class getSendDataRPGTest {
 
@@ -34,9 +34,6 @@ public class getSendDataRPGTest {
     @Test
     public void cobaUDP() throws Exception
     {
-
-//        DatagramSocket serverSocketUDP = new DatagramSocket(4305);
-
         byte a=1;
         int b=0;
         char[] grade = {'A','B','C','D','F'};
@@ -54,16 +51,11 @@ public class getSendDataRPGTest {
         int pix                 = 700;
         int sliceTotal          = 360;
         int sliceNumIncr        = 1;
-
-
-
-
+       
         while(true) {
             if(b>=4){
                 b=0;
             }
-
-
             switch(grades)
             {
                 case 'A' :
@@ -133,13 +125,12 @@ public class getSendDataRPGTest {
                 default :
 
             }
-
+            
               /*initiated counting size*/
             for(int c=0; c<numCells; c++){
-//            if(message[c] != 0){
                 size+=1;
-//            }
             }
+          
             size = size+30;
             Socket socket = new Socket("127.0.0.1", 1234);
             DataOutputStream dOut = new DataOutputStream(socket.getOutputStream());
@@ -167,24 +158,6 @@ public class getSendDataRPGTest {
 
             numCells=0;
             size=0;
-            /*DatagramPacket receivePacket = new DatagramPacket(receiveData, receiveData.length);
-            serverSocketUDP.receive(receivePacket);
-            String sentence = new String(receivePacket.getData());
-            System.out.println("RECEIVED: " + sentence);
-            System.out.println("RECEIVED: " + receivePacket);
-            int[] hasil = new int[2048];
-
-            int n =0;
-            for(int ab=0;ab<5;ab++){
-                hasil[ab]= byteKeInt(receiveData,n);
-                System.out.println("RECEIVED: " + hasil[ab]);
-                n+=4;
-            }
-            int akhir = byteKeInt(receiveData,0) - 10;
-            for(int i=20; i<akhir; i++){
-                System.out.println("RECEIVED: " + receiveData[i]);
-            }
-            System.out.println("---");*/
         }
     }
 }
