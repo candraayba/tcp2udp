@@ -3,7 +3,7 @@ import java.io.IOException;
 import java.net.*;
 
 /**
- * Created by len on 5/30/16.
+ * @author candra
  */
 public class getSendDataRPG {
 
