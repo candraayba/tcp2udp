@@ -1,13 +1,13 @@
 /**
- * Created by len on 6/7/16.
+ * @author candra
  */
 public class convert {
 
     /**
-     *
-     * @param b
-     * @param awal
-     * @return
+     * convert from byte to Integer
+     * @param b array byte
+     * @param awal array index
+     * @return byte[]
      *
      * convert byte array to integer data
      */
